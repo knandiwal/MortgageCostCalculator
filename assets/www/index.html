@@ -1,0 +1,176 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+
+<title>UK Mortgage Calculator</title>
+<meta name="description" content="Impartial UK mortgage calculator to work out interest, repayments & total costs.">
+<meta name="author" content="richards19.com">
+
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+<meta name="viewport" content="width=device-width">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	
+	
+	<link rel="stylesheet" href="css/boilerplate.css">
+	<link rel="stylesheet" href="css/general.css">
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/button.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="lib/jquery-1.7.1.min.js"></script>
+	<script src="lib/cordova-2.0.0.js"></script>
+	<script src="lib/phpjs.js"></script>
+
+
+</head>
+<body class="bg01">
+
+	<div class="g12 advert">
+		
+		<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-9426276629986265";
+			/* Android app */
+			google_ad_slot = "5598339050";
+			google_ad_width = 320;
+			google_ad_height = 50;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+				
+	</div>
+
+
+	<div class="g12 logo">
+	
+		<img src="css/images/logo/450.png" />
+	
+	</div>
+
+	
+	<div role="main" class="g12">
+
+	
+		<div class="g12 mortgageCalculator" >
+		
+			<form autocomplete="off">
+			
+				<div>
+					<label for="mortgage_amount">Mortgage amount</label>
+					<input maxlength="9" class="validateCurrency raw" type="number" name="mortgage_amount" value="" /> 		
+					<input class="validateCurrency formatted" type="text" name="" value="" /> 			
+				</div>			
+				
+				<div>	
+					<label for="interestrate_1">Initial interest rate (%)</label>
+					<input class="validatePercentage raw" type="number" name="interestrate_1" value="" /> 
+					<input class="validatePercentage formatted" type="text" name="" value="" />
+				</div>
+				
+				<div>
+					<label for="interestrate_period_1">Over how many years</label>
+					<input maxlength="2" type="number" name="interestrate_period_1" value="" /> <br />
+				</div>
+				
+				<div class="advancedMode">
+					
+					<div>
+						<label for="interestrate_2">SMR interest rate (%)</label>
+						<input class="validatePercentage raw" type="number" name="interestrate_2" value="" /> 
+						<input class="validatePercentage formatted" type="text" name="" value="" />
+					</div>
+					
+					<div>
+						<label for="interestrate_period_2">Over how many years</label>
+						<input maxlength="2" class="" type="number" name="interestrate_period_2" value="" /> <br />				
+					</div>
+					
+				</div>
+				
+				<div class="g6 l buttonHolder">
+					<a class="btn lightgreen modeSwitch" id="basicModeButton">Basic<br />Mode</a>
+					<a class="btn lightgreen modeSwitch" id="advancedModeButton">Advanced<br />Mode</a>
+				</div>
+				
+				<div class="g6 r buttonHolder">
+					<a class="btn calculate">Calculate<br />Payment</a>
+				</div>
+				
+			</form>
+		
+		</div>
+		
+		
+	</div>
+
+	<div class="g12" id="mortgageCalculatorResults">
+
+		<table>
+		
+			<tr>
+				<td class="header">Initial Monthly payment</td>
+				<td class="result" id="monthly_payment_1">123456.02</td>
+			</tr>
+			
+			<tr>
+				<td class="header">SMR Monthly payment</td>
+				<td class="result" id="monthly_payment_2"></td>
+			</tr>
+			
+			<tr>
+				<td class="header">Total repayment</td>
+				<td class="result" id="total_repay"></td>
+			</tr>
+			
+			<tr>
+				<td class="header">Total interest</td>
+				<td class="result" id="total_interest"></td>
+			</tr>
+		
+			<tr>
+				<td class="header">Cost of a pound</td>
+				<td class="result" id="cost_per_pound"></td>
+			</tr>
+		
+			<tr>
+				<td class="header">To completion</td>
+				<td class="result" id="completion"></td>
+			</tr>
+		
+		</table>
+
+	
+	</div>
+
+
+	<div class="g12 footer r">
+		Powered by <a href="http://www.mortgagecostcalculator.co.uk">www.mortgagecostcalculator.co.uk</a>	
+	</div>
+
+	<div class="g12 preloader">
+		
+	</div>
+	
+	<div class="g12 message">
+		<div class="messageHolder">
+			<span class="title">Empty title!</span><br />
+			<span class="body">here is the error message you need to know about</span>		
+			
+			<br />
+			<br />
+			<a class="btn darkgreen closeMessage">Close</a>
+		</div>
+	</div>
+	
+	<div id="overlay"></div>
+
+	<!-- JavaScript at the bottom for fast page loading -->
+	<script src="js/Controller.js"></script>
+	<script src="js/script.js"></script>
+	<!-- end scripts -->
+
+
+</body>
+</html>
