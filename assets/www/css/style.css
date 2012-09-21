@@ -2,7 +2,7 @@
 
 .logo {
 	padding: 2px 0;
-
+	text-align: center;
 }
 
 .footer{
@@ -12,7 +12,7 @@
 
 .advert {
 	margin-top: -10px;
-	margin-left: -5px;	
+	text-align: center;
 }
 
 
